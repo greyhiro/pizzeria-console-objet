@@ -1,6 +1,6 @@
 package fr.pizzeria.console;
 
-import java.util.Locale;
+
 import java.util.Scanner;
 import fr.pizzeria.console.Pizza;
 
@@ -15,7 +15,8 @@ public class PizzeriaAdminConsoleApp {
 	 * L’orientale 13.50
 	 */
 	public static void main(String[] args) {
-
+	
+		
 		Pizza[] p = new Pizza[50];
 		p[0] = new Pizza("PEP", "Pépéroni", 12.50);
 		p[1] = new Pizza("MAR", "Margherita", 14.00);
@@ -83,13 +84,76 @@ public class PizzeriaAdminConsoleApp {
 					break;
 
 				case 3:
-					System.out.println("3");
-					break;
+					
+					String codepizz;
+					System.out.println("\n***************choisissez une pizza a modifier par son code********************************* \n");
+					System.out.println("\n***************LA CARTE********************************* \n");
+
+					for (i = 0; i < p.length; i++) {
+						if (p[i] != null) {
+							System.out.println(p[i].getId() + " " + p[i].getCode() + " " + p[i].getNom() + " " + p[i].getPrix());
+						}
+					}
+					System.out.println("compteur = " + i + " PIZZA au max dans cettee liste");
+				
+					codepizz = scan.next();
+					
+			
+
+					System.out.println("\n***************Nouveau Code********************************* \n");
+
+					code = scan.next();
+
+					System.out.println("\n***************Nouveau Nom********************************* \n");
+
+					nom = scan.next();
+
+					System.out.println("\n***************Nouveau Prix********************************* \n");
+
+					prix = scan.nextDouble();
+					
+					for(i=0; i<p.length; i++)
+					{
+					
+						if ((p[i] != null)&&(p[i].getCode().equals(codepizz)) )
+						{
+							
+							p[i]= new Pizza(code, nom, prix);
+						}
+						
+					}
+							
+							break;
+						
 				case 4:
-					System.out.println("4");
+					String pizzSupr;
+					System.out.println("\n***************choisissez une pizza a supprimer par son code********************************* \n");
+					System.out.println("\n***************LA CARTE********************************* \n");
+
+					for (i = 0; i < p.length; i++) {
+						if (p[i] != null) {
+							System.out.println(p[i].getId() + " " + p[i].getCode() + " " + p[i].getNom() + " " + p[i].getPrix());
+						}
+					}
+					System.out.println("compteur = " + i + " PIZZA au max dans cerre liste");
+					
+					pizzSupr = scan.next();
+					for(i=0; i<p.length; i++)
+					{
+					
+						if ((p[i] != null)&&(p[i].getCode().equals(pizzSupr)))
+						{
+							
+							p[i]= null;
+						}
+						
+					
+					}	
+			
+					
 					break;
 				case 99:
-					System.out.println("5");
+					System.out.println("Au revoir!!!!!");
 					break;
 				default:
 					System.out.println("\n repond une valeur du menu \n");
