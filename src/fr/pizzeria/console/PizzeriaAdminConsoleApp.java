@@ -87,6 +87,8 @@ public class PizzeriaAdminConsoleApp {
 					
 					String codepizz;
 					System.out.println("\n***************choisissez une pizza a modifier par son code********************************* \n");
+					
+					
 					System.out.println("\n***************LA CARTE********************************* \n");
 
 					for (i = 0; i < p.length; i++) {
@@ -94,7 +96,7 @@ public class PizzeriaAdminConsoleApp {
 							System.out.println(p[i].getId() + " " + p[i].getCode() + " " + p[i].getNom() + " " + p[i].getPrix());
 						}
 					}
-					System.out.println("compteur = " + i + " PIZZA au max dans cettee liste");
+					System.out.println("compteur = " + i + " PIZZA au max dans cette liste");
 				
 					codepizz = scan.next();
 					
